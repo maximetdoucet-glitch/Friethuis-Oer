@@ -13,7 +13,7 @@ export default function Location() {
   ];
 
   return (
-    <section id="location" className="pt-20 pb-10 bg-[#060606] border-t border-white/5 relative md:overflow-visible">
+    <section id="location" className="pt-20 pb-0 bg-[#060606] border-t border-white/5 relative md:overflow-visible">
       {/* Ambient glow */}
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/6 blur-[120px] rounded-full -translate-x-1/2 translate-y-1/2 pointer-events-none" />
 
