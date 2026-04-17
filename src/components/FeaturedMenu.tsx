@@ -115,7 +115,7 @@ export default function FeaturedMenu() {
             <motion.div
               key={idx}
               variants={itemVariants}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
+              whileHover={{ scale: 1.02 }}
               className="group relative rounded-[2rem] overflow-hidden border border-white/6 hover:border-accent/25 transition-all duration-500 bg-card"
             >
               {/* Image */}

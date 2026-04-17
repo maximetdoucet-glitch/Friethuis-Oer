@@ -21,7 +21,7 @@ export default function Location() {
           </span>
           <h2 className="text-[clamp(3rem,7vw,6rem)] leading-[0.84] tracking-tight">
             BEZOEK<br />
-            <span className="text-accent italic" style={{ fontFamily: 'var(--font-playfair)' }}>Friethuys &apos;Oer&apos;!</span>
+            <span className="text-accent">Friethuys &apos;Oer&apos;!</span>
           </h2>
         </div>
 

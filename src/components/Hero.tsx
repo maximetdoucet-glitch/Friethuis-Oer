@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useRef } from 'react';
 
 const stats = [
@@ -14,19 +14,6 @@ const stats = [
 
 export default function Hero() {
   const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ["start start", "end start"]
-  });
-
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, 80]);
-  const rotate = useTransform(scrollYProgress, [0, 1], [1, -5]);
-  const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
-
-  // Smooth out the motion
-  const smoothY1 = useSpring(y1, { stiffness: 100, damping: 30, restDelta: 0.001 });
-  const smoothY2 = useSpring(y2, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
   return (
     <section ref={targetRef} className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-24 pb-12">
@@ -34,21 +21,18 @@ export default function Hero() {
       <div className="absolute top-1/4 left-0 w-[600px] h-[600px] bg-accent/8 rounded-full blur-[140px] -translate-x-1/2 pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[400px] bg-accent/5 rounded-full blur-[120px] translate-x-1/4 translate-y-1/4 pointer-events-none" />
 
-      {/* Giant background word */}
-      <motion.div 
-        style={{ y: smoothY1, opacity }}
-        className="absolute inset-0 flex items-center pointer-events-none select-none overflow-hidden"
-      >
+      {/* Giant background word — now static and stable */}
+      <div className="absolute inset-0 flex items-center pointer-events-none select-none overflow-hidden">
         <h2 className="text-[22vw] font-black leading-none whitespace-nowrap opacity-[0.035] tracking-tighter translate-x-[-5%]">
           FRIET FRIET FRIET
         </h2>
-      </motion.div>
+      </div>
 
       <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center relative z-10">
         {/* Left column — copy */}
         <motion.div 
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="order-2 lg:order-1"
         >
@@ -63,9 +47,7 @@ export default function Hero() {
           {/* Headline */}
           <h1 className="text-[clamp(4rem,10vw,8rem)] leading-[0.84] tracking-tight mb-8">
             IN FRIET<br />
-            <span className="gradient-text font-display italic" style={{ fontFamily: 'var(--font-playfair)' }}>
-              We Trust
-            </span>
+            <span className="gradient-text font-display">We Trust</span>
           </h1>
 
           <p className="text-lg md:text-xl text-white/55 max-w-lg mb-10 leading-relaxed font-medium">
@@ -105,11 +87,8 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Right column — image */}
-        <motion.div 
-          style={{ y: smoothY2, rotate }}
-          className="relative order-1 lg:order-2 group"
-        >
+        {/* Right column — image container now static */}
+        <div className="relative order-1 lg:order-2 group">
           {/* Rotating ring */}
           <div className="absolute inset-[-24px] rounded-[3rem] border border-accent/10 animate-spin-slow" style={{ animationDuration: '30s' }} />
 
@@ -155,7 +134,7 @@ export default function Hero() {
             <p className="text-[10px] font-black uppercase tracking-[0.2em] text-accent/80 mb-0.5">Dubbel Gebakken</p>
             <p className="text-white font-black text-lg">Perfecte Crunch</p>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Scroll hint */}

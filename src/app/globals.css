@@ -191,13 +191,11 @@ body {
   margin: 1.5rem 0;
 }
 
-/* ========= HOVER LIFT ========= */
-.hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.hover-lift:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 60px rgba(245,200,66,0.15);
+/* ========= STABLE CONTAINERS ========= */
+.card-container {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--border);
 }
 
 /* ========= NOISE TEXTURE BACKGROUND ========= */
@@ -232,7 +230,7 @@ body {
 .reveal-up {
   opacity: 0;
   filter: blur(8px);
-  transform: translateY(45px) skewY(1deg);
+  transform: translateY(20px);
   transition:
     opacity  0.6s cubic-bezier(0.2, 1, 0.3, 1),
     filter   0.6s cubic-bezier(0.2, 1, 0.3, 1),
@@ -243,7 +241,7 @@ body {
 .reveal-left {
   opacity: 0;
   filter: blur(8px);
-  transform: translateX(-45px) skewX(1deg);
+  transform: translateX(-20px);
   transition:
     opacity  0.6s cubic-bezier(0.2, 1, 0.3, 1),
     filter   0.6s cubic-bezier(0.2, 1, 0.3, 1),
@@ -254,7 +252,7 @@ body {
 .reveal-right {
   opacity: 0;
   filter: blur(8px);
-  transform: translateX(45px) skewX(-1deg);
+  transform: translateX(20px);
   transition:
     opacity  0.6s cubic-bezier(0.2, 1, 0.3, 1),
     filter   0.6s cubic-bezier(0.2, 1, 0.3, 1),
@@ -265,7 +263,7 @@ body {
 .reveal-scale {
   opacity: 0;
   filter: blur(8px);
-  transform: scale(0.94) translateY(20px);
+  transform: scale(0.97) translateY(10px);
   transition:
     opacity  0.6s cubic-bezier(0.2, 1, 0.3, 1),
     filter   0.6s cubic-bezier(0.2, 1, 0.3, 1),

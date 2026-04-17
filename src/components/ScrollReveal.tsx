@@ -19,19 +19,19 @@ interface ScrollRevealProps {
 
 const variants = {
   up: {
-    hidden: { opacity: 0, y: 40, filter: 'blur(10px)', skewY: 2 },
-    visible: { opacity: 1, y: 0, filter: 'blur(0px)', skewY: 0 },
+    hidden: { opacity: 0, y: 20, filter: 'blur(10px)' },
+    visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
   },
   left: {
-    hidden: { opacity: 0, x: -40, filter: 'blur(10px)', skewX: 2 },
-    visible: { opacity: 1, x: 0, filter: 'blur(0px)', skewX: 0 },
+    hidden: { opacity: 0, x: -20, filter: 'blur(10px)' },
+    visible: { opacity: 1, x: 0, filter: 'blur(0px)' },
   },
   right: {
-    hidden: { opacity: 0, x: 40, filter: 'blur(10px)', skewX: -2 },
-    visible: { opacity: 1, x: 0, filter: 'blur(0px)', skewX: 0 },
+    hidden: { opacity: 0, x: 20, filter: 'blur(10px)' },
+    visible: { opacity: 1, x: 0, filter: 'blur(0px)' },
   },
   scale: {
-    hidden: { opacity: 0, scale: 0.9, filter: 'blur(10px)', y: 20 },
+    hidden: { opacity: 0, scale: 0.95, filter: 'blur(10px)', y: 10 },
     visible: { opacity: 1, scale: 1, filter: 'blur(0px)', y: 0 },
   },
   fade: {

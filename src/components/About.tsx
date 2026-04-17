@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useRef } from 'react';
 
 const milestones = [
@@ -14,20 +14,9 @@ const milestones = [
 
 export default function About() {
   const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const imgY = useTransform(scrollYProgress, [0, 1], [0, 80]);
-  const textY = useTransform(scrollYProgress, [0, 1], [0, -30]);
-
-  // Smooth out the motion
-  const smoothImgY = useSpring(imgY, { stiffness: 100, damping: 30, restDelta: 0.001 });
-  const smoothTextY = useSpring(textY, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
   return (
-    <section id="about" ref={containerRef} className="py-20 bg-black relative overflow-hidden md:overflow-visible">
+    <section id="about" ref={containerRef} className="py-20 bg-black relative">
       {/* Ambient light */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/6 rounded-full blur-[140px] translate-x-1/3 -translate-y-1/3 pointer-events-none" />
 
@@ -35,7 +24,7 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 
           {/* Image column */}
-          <motion.div style={{ y: smoothImgY }} className="relative group">
+          <div className="relative group">
             {/* Glow blob */}
             <div className="absolute -inset-8 bg-accent/8 rounded-full blur-[80px] group-hover:bg-accent/14 transition-all duration-1000" />
 
@@ -58,26 +47,24 @@ export default function About() {
               </div>
             </div>
 
-            {/* Floating badge — now safely INSIDE the motion area to avoid cropping */}
-            <motion.div 
-              style={{ rotate: 12 }}
-              whileHover={{ rotate: 0, scale: 1.1 }}
+            {/* Floating badge — now safely INSIDE and FIXED (no rotation) */}
+            <div 
               className="absolute bottom-6 right-6 w-24 h-24 bg-accent rounded-full flex flex-col items-center justify-center p-4 shadow-2xl shadow-accent/40 z-30"
             >
               <span className="text-black font-black text-[9px] uppercase tracking-wider">EST.</span>
               <span className="text-black font-black text-2xl leading-none">2014</span>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Text column */}
-          <motion.div style={{ y: smoothTextY }} className="relative">
+          <div className="relative">
             <span className="inline-block text-accent font-black text-[10px] uppercase tracking-[0.4em] mb-6 border border-accent/30 rounded-full px-4 py-1.5">
               Ons Ambacht
             </span>
 
             <h2 className="text-[clamp(3rem,6vw,5.5rem)] leading-[0.84] tracking-tight mb-8">
               HET <span className="text-stroke">ERFGOED</span> VAN<br />
-              <span className="text-accent italic" style={{ fontFamily: 'var(--font-playfair)' }}>Vakmanschap</span>
+              <span className="text-accent">Vakmanschap</span>
             </h2>
 
             <div className="space-y-5 text-lg text-white/55 font-medium leading-relaxed mb-10">
@@ -112,7 +99,7 @@ export default function About() {
                 </svg>
               </span>
             </Link>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
