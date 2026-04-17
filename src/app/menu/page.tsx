@@ -4,8 +4,7 @@ import Image from 'next/image';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Menu — Friethuys Oer | Verse Ambachtelijke Friet Nijmegen',
-  description: 'Bekijk het volledige menu van Friethuys Oer. Verse friet, vegan specials, ambachtelijke snacks en huisgemaakte sauzen. Ziekerstraat 1, Nijmegen.',
+  description: "Bekijk het volledige menu van Friethuys &apos;Oer&apos;!. Verse friet, vegan specials, ambachtelijke snacks en huisgemaakte sauzen. Ziekerstraat 1, Nijmegen.",
 };
 
 type MenuItem = {
@@ -30,7 +29,7 @@ const MENU_CATEGORIES: MenuCategory[] = [
   {
     id: 'friet',
     icon: '🍟',
-    title: 'Oer Friet',
+    title: "'Oer'! Friet",
     subtitle: 'Het Origineel',
     description: 'Vers gesneden uit Nederlandse kleigrond aardappelen, dubbel gebakken voor de ultieme knapperigheid. Elke dag vers.',
     image: '/hero-fries.png',
@@ -61,7 +60,7 @@ const MENU_CATEGORIES: MenuCategory[] = [
     icon: '🥘',
     title: 'Ambachtelijke Snacks',
     subtitle: 'Klassiekers Elevated',
-    description: 'Klassieke snacks, naar een hoger niveau gebracht met de Oer-kwaliteit. Gemaakt met vakmanschap.',
+    description: "Klassieke snacks, naar een hoger niveau gebracht met de 'Oer'!-kwaliteit. Gemaakt met vakmanschap.",
     items: [
       { name: 'Rundvleeskroket', desc: 'Rijke runderragout in een goudbruine korst.', price: '€ 2,80', tags: [] },
       { name: 'Kipcorn', desc: 'Krokante kipsnack, ideaal als bijgerecht.', price: '€ 2,60', tags: [] },
@@ -79,7 +78,7 @@ const MENU_CATEGORIES: MenuCategory[] = [
     description: 'Alle sauzen worden dagelijks vers bereid in ons keukentje. Geen kant-en-klare rommel — echt gemaakt.',
     image: '/sauces.png',
     items: [
-      { name: 'Oer Mayo', desc: 'Onze signature romige huismayo.', price: '€ 1,20', tags: ['V'], highlight: true },
+      { name: "'Oer'! Mayo", desc: 'Onze signature romige huismayo.', price: '€ 1,20', tags: ['V'], highlight: true },
       { name: 'Vegan Mayo', desc: 'Rijk en knoflookachtig, 100% plantaardig.', price: '€ 1,20', tags: ['VG'] },
       { name: 'Truffel Mayo', desc: 'Voor een vleugje luxe.', price: '€ 1,80', tags: ['V'] },
       { name: 'Satésaus', desc: 'Warme, pittige pindasaus.', price: '€ 1,50', tags: ['VG'] },
@@ -266,7 +265,7 @@ export default function MenuPage() {
         <div className="container mx-auto">
           <div className="relative bg-accent rounded-[3rem] p-12 md:p-16 overflow-hidden text-black">
             {/* Big ghost text */}
-            <div className="absolute -bottom-8 -right-8 text-[20vw] font-black italic opacity-10 select-none leading-none pointer-events-none">OER</div>
+            <div className="absolute -bottom-8 -right-8 text-[20vw] font-black italic opacity-10 select-none leading-none pointer-events-none">&apos;OER&apos;!</div>
 
             <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
               <div className="max-w-2xl">
@@ -275,7 +274,7 @@ export default function MenuPage() {
                   DE ULTIEME NIJMEEGSE ERVARING
                 </h3>
                 <p className="text-xl font-bold opacity-75 leading-relaxed">
-                  Grote Oer Friet + Vegan Stoofvlees + Truffel Mayo — één hap en je bent verkocht.
+                  Grote &apos;Oer&apos;! Friet + Vegan Stoofvlees + Truffel Mayo — één hap en je bent verkocht.
                 </p>
               </div>
             </div>

@@ -5,8 +5,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Over Ons — Friethuys Oer | Het Verhaal van Ambachtelijke Friet',
-  description: 'Ontdek het verhaal van Friethuys Oer in Nijmegen. Opgericht in 2014 met de missie authentieke ambachtelijke friet te serveren. Vers gesneden, dubbel gebakken, met passie gemaakt.',
+  title: "Over Ons — Friethuys 'Oer'! | Het Verhaal van Ambachtelijke Friet",
+  description: "Ontdek het verhaal van Friethuys 'Oer'! in Nijmegen. Opgericht in 2014 met de missie authentieke ambachtelijke friet te serveren. Vers gesneden, dubbel gebakken, met passie gemaakt.",
 };
 
 const values = [
@@ -18,7 +18,7 @@ const values = [
   {
     icon: '🔥',
     title: 'Dubbel Gebakken',
-    desc: 'Elke friet wordt twee keer gebakken: eerst zacht, dan knapperig. Het Oer-geheim.',
+    desc: "Elke friet wordt twee keer gebakken: eerst zacht, dan knapperig. Het 'Oer'!-geheim.",
   },
   {
     icon: '🌱',
@@ -36,7 +36,7 @@ const team = [
   {
     name: 'Sander den Boer',
     role: 'Oprichter & Hoofd Frietbakker',
-    bio: 'Sander droomde al als kind van de perfecte friet. In 2014 opende hij de deuren van Friethuys Oer en is sindsdien de spil van alles.',
+    bio: "Sander droomde al als kind van de perfecte friet. In 2014 opende hij de deuren van Friethuys 'Oer'! en is sindsdien de spil van alles.",
     initial: 'S',
   },
   {
@@ -48,7 +48,7 @@ const team = [
   {
     name: 'Tim van Leeuwen',
     role: 'Inkoop & Aardappel Expert',
-    bio: 'Tim bezoekt elk seizoen de boerderijen persoonlijk om de beste aardappelen voor Oer te selecteren.',
+    bio: "Tim bezoekt elk seizoen de boerderijen persoonlijk om de beste aardappelen voor 'Oer'! te selecteren.",
     initial: 'T',
   },
 ];
@@ -80,7 +80,7 @@ export default function AboutPage() {
           <div className="relative aspect-[21/8] rounded-[2.5rem] overflow-hidden border border-white/8 mb-32">
             <Image
               src="/exterior.png"
-              alt="Friethuys Oer – Ziekerstraat Nijmegen"
+              alt="Friethuys 'Oer'! – Ziekerstraat Nijmegen"
               fill
               className="object-cover"
               priority
@@ -116,7 +116,7 @@ export default function AboutPage() {
                 Onze Roots
               </span>
               <h2 className="text-[clamp(3rem,6vw,5rem)] leading-[0.84] tracking-tight mb-10">
-                WAAROM <span className="text-stroke">OER</span>?
+                WAAROM <span className="text-stroke">&apos;OER&apos;!</span>?
               </h2>
               <div className="space-y-6 text-xl text-white/55 font-medium leading-relaxed">
                 <p>
@@ -128,7 +128,7 @@ export default function AboutPage() {
                   Vers gesneden, dubbel gebakken, met trots geserveerd door mensen die écht geven om hun ambacht.
                 </p>
                 <p>
-                  Tien jaar later is Friethuys Oer meer dan een frietkraam — het is een Nijmeegs instituut.
+                  Tien jaar later is Friethuys &apos;Oer&apos;! meer dan een frietkraam — het is een Nijmeegs instituut.
                   Van studenten tot families, van vegans tot carnivoren: iedereen is welkom bij ons.
                 </p>
               </div>
@@ -140,7 +140,7 @@ export default function AboutPage() {
               <div className="relative rounded-[2.5rem] overflow-hidden border border-white/8 aspect-[4/5]">
                 <Image
                   src="/interior.png"
-                  alt="Interieur Friethuys Oer"
+                  alt="Interieur Friethuys 'Oer'!"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-[2s]"
                   sizes="(max-width: 1024px) 90vw, 45vw"
@@ -198,9 +198,9 @@ export default function AboutPage() {
 
               <div className="space-y-8">
                 {[
-                  { step: '01', title: 'Selectie', desc: 'Tim bezoekt persoonlijk de Nederlandse kleiboerderijen om de perfecte aardappelen te selecteren.' },
+                  { step: '01', title: 'Selectie', desc: "Tim bezoekt persoonlijk de Nederlandse kleiboerderijen om de perfecte aardappelen voor 'Oer'! te selecteren." },
                   { step: '02', title: 'Vers Snijden', desc: 'Elke ochtend worden de aardappelen gewassen, geschild en met de hand gesneden in onze zaak.' },
-                  { step: '03', title: 'Eerste Bak', desc: 'Op lagere temperatuur worden de frietjes zacht en gaar van binnen — het fundament van de Oer-friet.' },
+                  { step: '03', title: 'Eerste Bak', desc: "Op lagere temperatuur worden de frietjes zacht en gaar van binnen — het fundament van de 'Oer'!-friet." },
                   { step: '04', title: 'Tweede Bak', desc: 'Op hoge hitte krijgen ze de legendarische knapperigheid. Goudbruin, luchtig, perfect.' },
                 ].map((s) => (
                   <div key={s.step} className="flex gap-6 group">
@@ -219,7 +219,7 @@ export default function AboutPage() {
               <div className="relative rounded-[2.5rem] overflow-hidden border border-white/8 aspect-square">
                 <Image
                   src="/vegan-stoofvlees.png"
-                  alt="Het ambachtelijke kookproces bij Friethuys Oer"
+                  alt="Het ambachtelijke kookproces bij Friethuys 'Oer'!"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 90vw, 45vw"
@@ -239,7 +239,7 @@ export default function AboutPage() {
               Ons Team
             </span>
             <h2 className="text-[clamp(3rem,7vw,6rem)] leading-[0.84] tracking-tight">
-              DE MENSEN<br /><span className="text-accent">ACHTER OER</span>
+              DE MENSEN<br /><span className="text-accent">ACHTER &apos;OER&apos;!</span>
             </h2>
           </div>
 

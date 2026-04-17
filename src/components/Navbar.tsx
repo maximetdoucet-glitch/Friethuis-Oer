@@ -38,17 +38,17 @@ export default function Navbar() {
             className="flex items-center gap-3 group shrink-0"
             aria-label="Friethuys Oer — Home"
           >
-            <div className="w-9 h-9 rounded-xl flex items-center justify-center rotate-3 group-hover:rotate-0 transition-transform duration-300 shrink-0 overflow-hidden bg-black">
+            <div className="w-12 h-12 rounded-2xl flex items-center justify-center rotate-3 group-hover:rotate-0 transition-transform duration-300 shrink-0 overflow-hidden bg-black">
               <Image
                 src="/logo-mark.png"
                 alt="Friethuys Oer logo"
-                width={36}
-                height={36}
-                className="object-cover"
+                width={48}
+                height={48}
+                className="object-contain"
               />
             </div>
-            <span className="text-xl font-black tracking-tight">
-              FRIETHUYS <span className="text-accent italic">OER</span>
+            <span className="block text-xl font-black tracking-tight">
+              FRIETHUYS <span className="text-accent italic">&apos;OER&apos;!</span>
             </span>
           </Link>
 

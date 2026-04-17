@@ -50,7 +50,7 @@ export default function Footer() {
               <div className="leading-none">
                 <span className="block text-[10px] font-black uppercase tracking-[0.3em] text-white/35 group-hover:text-accent/70 transition-colors">Ambachtelijk</span>
                 <span className="block text-2xl font-black tracking-tight">
-                  FRIETHUYS <span className="text-accent italic">OER</span>
+                  FRIETHUYS <span className="text-accent italic">&apos;OER&apos;!</span>
                 </span>
               </div>
             </Link>
@@ -128,7 +128,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/20 text-[10px] font-black uppercase tracking-widest">
-            © 2026 Friethuys Oer Nijmegen. Alle Rechten Voorbehouden.
+            © 2026 Friethuys &apos;Oer&apos;! Nijmegen. Alle Rechten Voorbehouden.
           </p>
           <div className="flex gap-6 text-white/20 text-[10px] font-black uppercase tracking-widest">
             <a href="#" className="hover:text-white/40 transition-colors">Privacy</a>

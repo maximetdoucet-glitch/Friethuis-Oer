@@ -90,7 +90,7 @@ export default function Hero() {
           <div className="relative h-[55vh] lg:h-[75vh] w-full rounded-[2.5rem] overflow-hidden border border-white/8 transform rotate-1 group-hover:rotate-0 transition-transform duration-700 shadow-2xl">
             <Image
               src="/hero-fries.png"
-              alt="Verse ambachtelijke friet van Friethuys Oer Nijmegen"
+              alt="Verse ambachtelijke friet van Friethuys 'Oer'! Nijmegen"
               fill
               className="object-cover scale-105 group-hover:scale-100 transition-transform duration-1000"
               priority

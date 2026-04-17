@@ -9,7 +9,7 @@ export default function Location() {
   ];
 
   return (
-    <section id="location" className="py-32 bg-[#060606] border-t border-white/5 relative overflow-hidden">
+    <section id="location" className="py-20 bg-[#060606] border-t border-white/5 relative overflow-hidden">
       {/* Ambient glow */}
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/6 blur-[120px] rounded-full -translate-x-1/2 translate-y-1/2 pointer-events-none" />
 
@@ -21,7 +21,7 @@ export default function Location() {
           </span>
           <h2 className="text-[clamp(3rem,7vw,6rem)] leading-[0.84] tracking-tight">
             BEZOEK<br />
-            <span className="text-accent italic" style={{ fontFamily: 'var(--font-playfair)' }}>Friethuys Oer</span>
+            <span className="text-accent italic" style={{ fontFamily: 'var(--font-playfair)' }}>Friethuys &apos;Oer&apos;!</span>
           </h2>
         </div>
 

@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const FEATURED = [
   {
-    name: 'Oer Friet',
+    name: "'Oer'! Friet",
     tagline: 'Het Origineel',
     desc: 'Vers gesneden uit Nederlandse kleigrond aardappelen, dubbel gebakken voor de ultieme knapperigheid.',
     image: '/hero-fries.png',
@@ -30,7 +30,7 @@ const FEATURED = [
 
 export default function FeaturedMenu() {
   return (
-    <section id="menu" className="py-32 bg-[#060606] relative overflow-hidden">
+    <section id="menu" className="py-20 bg-[#060606] relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       <div className="absolute top-1/2 left-0 w-72 h-72 bg-accent/5 blur-[100px] rounded-full -translate-y-1/2" />
@@ -121,7 +121,7 @@ export default function FeaturedMenu() {
           <div>
             <span className="text-accent font-black text-[10px] uppercase tracking-[0.3em] block mb-2">Chef&apos;s Tip</span>
             <p className="text-xl font-black max-w-xl">
-              Probeer de Grote Oer Friet met Vegan Stoofvlees & Truffel Mayo — dé Nijmeegse ervaring.
+              Probeer de Grote &apos;Oer&apos;! Friet met Vegan Stoofvlees & Truffel Mayo — dé Nijmeegse ervaring.
             </p>
           </div>
           <Link

@@ -4,8 +4,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Reviews — Friethuys Oer | Wat Nijmegen Zegt',
-  description: 'Lees de reviews van Friethuys Oer in Nijmegen. De beste ambachtelijke friet van Nijmegen — dat zeggen onze klanten. Bekijk onze Google Reviews en deel jouw ervaring.',
+  title: "Reviews — Friethuys 'Oer'! | Wat Nijmegen Zegt",
+  description: "Lees de reviews van Friethuys &apos;Oer&apos;! in Nijmegen. De beste ambachtelijke friet van Nijmegen — dat zeggen onze klanten. Bekijk onze Google Reviews en deel jouw ervaring.",
 };
 
 type Review = {
@@ -282,7 +282,7 @@ export default function ReviewsPage() {
             <div className="text-center shrink-0">
               <p className="text-white/40 font-black uppercase tracking-[0.25em] text-[10px] mb-6">Jouw Ervaring Delen?</p>
               <a
-                href="https://www.google.com/search?q=Friethuys+Oer+Nijmegen+reviews"
+                href="https://www.google.com/search?q=Friethuys+'Oer'!+Nijmegen+reviews"
                 target="_blank"
                 rel="noopener noreferrer"
                 id="write-review-btn"

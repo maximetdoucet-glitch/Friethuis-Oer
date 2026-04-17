@@ -16,15 +16,15 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Friethuys Oer — Ambachtelijke Verse Friet in Nijmegen",
+  title: "Friethuys 'Oer'! — Ambachtelijke Verse Friet in Nijmegen",
   description:
-    "Friethuys Oer serveert de beste ambachtelijke verse friet van Nijmegen. Vers gesneden uit Nederlandse kleigrond aardappelen, dubbel gebakken voor de perfecte crunch. Ziekerstraat 1, Nijmegen.",
-  keywords: "friet, snackbar, Nijmegen, verse friet, vegan, ambachtelijk, Friethuys Oer",
+    "Friethuys 'Oer'! serveert de beste ambachtelijke verse friet van Nijmegen. Vers gesneden uit Nederlandse kleigrond aardappelen, dubbel gebakken voor de perfecte crunch. Ziekerstraat 1, Nijmegen.",
+  keywords: "friet, snackbar, Nijmegen, verse friet, vegan, ambachtelijk, Friethuys 'Oer'!",
   openGraph: {
-    title: "Friethuys Oer — Ambachtelijke Verse Friet in Nijmegen",
+    title: "Friethuys 'Oer'! — Ambachtelijke Verse Friet in Nijmegen",
     description:
       "De lekkerste ambachtelijke verse friet van Nijmegen. Vers gesneden, dubbel gebakken, met huisgemaakte sauzen.",
-    siteName: "Friethuys Oer",
+    siteName: "Friethuys 'Oer'!",
     locale: "nl_NL",
     type: "website",
   },

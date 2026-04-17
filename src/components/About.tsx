@@ -10,7 +10,7 @@ const milestones = [
 
 export default function About() {
   return (
-    <section id="about" className="py-32 bg-black overflow-hidden relative">
+    <section id="about" className="py-20 bg-black overflow-hidden relative">
       {/* Ambient light */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/6 rounded-full blur-[140px] translate-x-1/3 -translate-y-1/3 pointer-events-none" />
 
@@ -26,7 +26,7 @@ export default function About() {
             <div className="relative rounded-[2.5rem] overflow-hidden border border-white/8 aspect-[4/5]">
               <Image
                 src="/exterior.png"
-                alt="Friethuys Oer – Het Nijmeegse Friethuys aan de Ziekerstraat"
+                alt="Friethuys 'Oer'! – Het Nijmeegse Friethuys aan de Ziekerstraat"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-[2s]"
                 sizes="(max-width: 1024px) 90vw, 45vw"
@@ -62,7 +62,7 @@ export default function About() {
 
             <div className="space-y-5 text-lg text-white/55 font-medium leading-relaxed mb-10">
               <p>
-                In 2014 bracht Friethuys Oer de originele frietcultuur terug naar het hart van Nijmegen. &ldquo;Oer&rdquo; — het Nederlandse woord voor <em className="text-white/80 not-italic font-bold">origineel</em> en <em className="text-white/80 not-italic font-bold">puur</em>.
+                In 2014 bracht Friethuys &apos;Oer&apos;! de originele frietcultuur terug naar het hart van Nijmegen. &ldquo;Oer&rdquo; — het Nederlandse woord voor <em className="text-white/80 not-italic font-bold">origineel</em> en <em className="text-white/80 not-italic font-bold">puur</em>.
               </p>
               <p>
                 Wij geloven in de kracht van de aardappel. Elke dag vers geleverd, zelf gesneden, dubbel gebakken. Geen compromissen, alleen het beste.
