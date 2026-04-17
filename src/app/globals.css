@@ -222,7 +222,7 @@ body {
 .reveal-left,
 .reveal-right,
 .reveal-scale {
-  will-change: opacity, transform;
+  will-change: opacity;
 }
 
 /* ── Up (default) ── */

@@ -112,8 +112,7 @@ export default function FeaturedMenu() {
             <motion.div
               key={idx}
               variants={itemVariants}
-              whileHover={{ scale: 1.02 }}
-              className="group relative rounded-[2rem] overflow-hidden border border-white/6 hover:border-accent/25 transition-all duration-500 bg-card"
+              className="group relative rounded-[2rem] overflow-hidden border border-white/6 hover:border-accent/25 transition-all duration-300 bg-card"
             >
               {/* Image */}
               <div className="relative h-72 w-full overflow-hidden">

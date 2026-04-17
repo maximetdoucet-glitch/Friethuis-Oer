@@ -92,8 +92,8 @@ export default function Hero() {
           {/* Rotating ring */}
           <div className="absolute inset-[-24px] rounded-[3rem] border border-accent/10 animate-spin-slow" style={{ animationDuration: '30s' }} />
 
-          {/* Glow */}
-          <div className="absolute inset-0 bg-accent/10 blur-3xl rounded-3xl scale-90 group-hover:scale-100 transition-transform duration-1000 opacity-60" />
+          {/* Glow — now stable */}
+          <div className="absolute inset-0 bg-accent/10 blur-3xl rounded-3xl opacity-60" />
 
           {/* Main image */}
           <div className="relative h-[55vh] lg:h-[75vh] w-full rounded-[2.5rem] overflow-hidden border border-white/8 shadow-2xl">
