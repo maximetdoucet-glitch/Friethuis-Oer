@@ -101,7 +101,7 @@ export default function Hero() {
               src="/hero-fries.png"
               alt="Verse ambachtelijke friet van Friethuys 'Oer'! Nijmegen"
               fill
-              className="object-cover scale-105 group-hover:scale-100 transition-transform duration-1000"
+              className="object-cover"
               priority
               sizes="(max-width: 1024px) 90vw, 45vw"
             />
@@ -124,12 +124,12 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Floating badge */}
+          {/* Floating badge — now static and stable */}
           <motion.div 
-            initial={{ scale: 0, rotate: 10 }}
-            animate={{ scale: 1, rotate: 0 }}
-            transition={{ delay: 0.6, type: "spring" }}
-            className="absolute -bottom-8 -right-6 z-10 glass-accent rounded-2xl px-5 py-3.5 shadow-xl border-accent/25 animate-float" style={{ animationDelay: '0.5s' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            className="absolute -bottom-8 -right-6 z-10 glass-accent rounded-2xl px-5 py-3.5 shadow-xl border-accent/25"
           >
             <p className="text-[10px] font-black uppercase tracking-[0.2em] text-accent/80 mb-0.5">Dubbel Gebakken</p>
             <p className="text-white font-black text-lg">Perfecte Crunch</p>
@@ -137,11 +137,12 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll hint */}
+      {/* Scroll hint — now simple and stable */}
       <motion.div 
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.4 }}
+        transition={{ delay: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
         <span className="text-[9px] font-black uppercase tracking-[0.3em]">Scroll</span>
         <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">

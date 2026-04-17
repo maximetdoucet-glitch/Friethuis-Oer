@@ -34,7 +34,7 @@ export default function About() {
                 src="/exterior.png"
                 alt="Friethuys 'Oer'! – Het Nijmeegse Friethuys aan de Ziekerstraat"
                 fill
-                className="object-cover group-hover:scale-105 transition-transform duration-[2s]"
+                className="object-cover"
                 sizes="(max-width: 1024px) 90vw, 45vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />

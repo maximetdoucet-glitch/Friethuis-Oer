@@ -42,15 +42,12 @@ const containerVariants = {
 } as const;
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 30, scale: 0.95 },
+  hidden: { opacity: 0 },
   visible: { 
     opacity: 1, 
-    y: 0, 
-    scale: 1, 
     transition: {
-      type: 'spring',
-      damping: 25,
-      stiffness: 100
+      duration: 0.5,
+      ease: "easeOut"
     }
   },
 } as const;
@@ -66,8 +63,8 @@ export default function FeaturedMenu() {
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-20">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
@@ -80,8 +77,8 @@ export default function FeaturedMenu() {
             </h2>
           </motion.div>
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:max-w-xs shrink-0"
@@ -124,7 +121,7 @@ export default function FeaturedMenu() {
                   src={item.image}
                   alt={item.name}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="object-cover"
                   sizes="(max-width: 768px) 90vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
@@ -164,8 +161,8 @@ export default function FeaturedMenu() {
 
         {/* Bottom CTA banner */}
         <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-16 bg-black/40 backdrop-blur-2xl rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 border border-white/6"
