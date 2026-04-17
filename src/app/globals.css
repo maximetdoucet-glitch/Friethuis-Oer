@@ -223,6 +223,9 @@ body {
 .reveal-right,
 .reveal-scale {
   will-change: opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
+  transform: translate3d(0, 0, 0);
 }
 
 /* ── Up (default) ── */
@@ -272,35 +275,6 @@ body {
 .parallax-layer {
   transition: transform 0.1s linear;
   will-change: transform;
-}
-
-/* ========= SECTION BLEED UTILITY ========= */
-.section-bleed {
-  position: relative;
-}
-
-.section-bleed::before {
-  content: '';
-  position: absolute;
-  top: -100px;
-  left: 0;
-  right: 0;
-  height: 200px;
-  background: linear-gradient(to bottom, transparent, var(--background) 50%);
-  pointer-events: none;
-  z-index: 2;
-}
-
-.section-bleed::after {
-  content: '';
-  position: absolute;
-  bottom: -100px;
-  left: 0;
-  right: 0;
-  height: 200px;
-  background: linear-gradient(to top, transparent, var(--background) 50%);
-  pointer-events: none;
-  z-index: 2;
 }
 
 /* ========= GLOBAL BACKGROUND GLOW ========= */

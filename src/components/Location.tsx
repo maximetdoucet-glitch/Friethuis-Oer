@@ -1,3 +1,7 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
 export default function Location() {
   const MAPS_EMBED =
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2467.7623!2d5.8607!3d51.8417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c70804d6fbd701%3A0x82ade85e5a23f00f!2sZiekerstraat%201%2C%206511%20LH%20Nijmegen!5e0!3m2!1snl!2snl!4v1680000000000!5m2!1snl!2snl';
@@ -13,7 +17,13 @@ export default function Location() {
       {/* Ambient glow */}
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/6 blur-[120px] rounded-full -translate-x-1/2 translate-y-1/2 pointer-events-none" />
 
-      <div className="container mx-auto px-6">
+      <motion.div 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="container mx-auto px-6"
+      >
         {/* Section header */}
         <div className="text-center mb-16">
           <span className="inline-block text-accent font-black text-[10px] uppercase tracking-[0.4em] mb-5 border border-accent/30 rounded-full px-4 py-1.5">
@@ -123,7 +133,7 @@ export default function Location() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

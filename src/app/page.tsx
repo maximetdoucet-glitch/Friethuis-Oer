@@ -18,21 +18,10 @@ export default function Home() {
         <Hero />
       </section>
 
-      <ScrollReveal variant="up" threshold={0.05}>
-        <FeaturedMenu />
-      </ScrollReveal>
-
-      <ScrollReveal variant="left" threshold={0.1}>
-        <About />
-      </ScrollReveal>
-
-      <ScrollReveal variant="right" threshold={0.1}>
-        <Location />
-      </ScrollReveal>
-
-      <ScrollReveal variant="fade" threshold={0.2}>
-        <Footer />
-      </ScrollReveal>
+      <FeaturedMenu />
+      <About />
+      <Location />
+      <Footer />
     </main>
   );
 }

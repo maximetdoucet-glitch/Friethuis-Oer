@@ -28,8 +28,11 @@ export default function About() {
             {/* Glow blob */}
             <div className="absolute -inset-8 bg-accent/8 rounded-full blur-[80px] group-hover:bg-accent/14 transition-all duration-1000" />
 
-            {/* Main image container */}
-            <div className="relative rounded-[2.5rem] overflow-hidden border border-white/8 aspect-[4/5] shadow-2xl">
+            {/* Main image container — hardware accelerated */}
+            <div 
+              className="relative rounded-[2.5rem] overflow-hidden border border-white/8 aspect-[4/5] shadow-2xl"
+              style={{ transform: 'translateZ(0)' }}
+            >
               <Image
                 src="/exterior.png"
                 alt="Friethuys 'Oer'! – Het Nijmeegse Friethuys aan de Ziekerstraat"
@@ -56,7 +59,7 @@ export default function About() {
             </div>
           </div>
 
-          {/* Text column */}
+          {/* Text column — static now for stability */}
           <div className="relative pb-8">
             <span className="inline-block text-accent font-black text-[10px] uppercase tracking-[0.4em] mb-6 border border-accent/30 rounded-full px-4 py-1.5">
               Ons Ambacht

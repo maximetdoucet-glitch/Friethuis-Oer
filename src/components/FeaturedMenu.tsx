@@ -100,19 +100,12 @@ export default function FeaturedMenu() {
           </motion.div>
         </div>
 
-        {/* Cards grid */}
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
-        >
+        {/* Cards grid — now static for zero-jump stability */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {FEATURED.map((item, idx) => (
-            <motion.div
+            <div
               key={idx}
-              variants={itemVariants}
-              className="group relative rounded-[2rem] overflow-hidden border border-white/6 hover:border-accent/25 transition-all duration-300 bg-card"
+              className="group relative rounded-[2rem] overflow-hidden border border-white/6 hover:border-accent/25 transition-[border-color,background-color] duration-300 bg-card"
             >
               {/* Image */}
               <div className="relative h-72 w-full overflow-hidden">
@@ -154,9 +147,9 @@ export default function FeaturedMenu() {
                   </svg>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Bottom CTA banner */}
         <motion.div 

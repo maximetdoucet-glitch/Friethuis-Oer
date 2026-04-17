@@ -38,7 +38,7 @@ export default function Hero() {
         >
           {/* Badge */}
           <div className="inline-flex items-center gap-2.5 bg-black/40 backdrop-blur-xl rounded-full px-4 py-2 mb-8 border border-accent/20">
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse shrink-0" />
+            <span className="w-2 h-2 rounded-full bg-accent shrink-0" />
             <span className="text-[10px] font-black uppercase tracking-[0.3em] text-accent">
               #1 Friet van Nijmegen
             </span>
@@ -76,7 +76,7 @@ export default function Hero() {
             </Link>
           </div>
 
-          {/* Stats bar */}
+          {/* Stats bar — static now for stability */}
           <div className="grid grid-cols-4 gap-4 border-t border-white/8 pt-8">
             {stats.map((s) => (
               <div key={s.label} className="text-center md:text-left">
@@ -87,16 +87,19 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Right column — image container now static */}
+        {/* Right column — image container now static and stabilized */}
         <div className="relative order-1 lg:order-2 group">
-          {/* Rotating ring */}
-          <div className="absolute inset-[-24px] rounded-[3rem] border border-accent/10 animate-spin-slow" style={{ animationDuration: '30s' }} />
+          {/* Decorative ring — now static */}
+          <div className="absolute inset-[-24px] rounded-[3rem] border border-accent/10" />
 
           {/* Glow — now stable */}
           <div className="absolute inset-0 bg-accent/10 blur-3xl rounded-3xl opacity-60" />
 
-          {/* Main image */}
-          <div className="relative h-[55vh] lg:h-[75vh] w-full rounded-[2.5rem] overflow-hidden border border-white/8 shadow-2xl">
+          {/* Main image container — hardware accelerated */}
+          <div 
+            className="relative h-[55vh] lg:h-[75vh] w-full rounded-[2.5rem] overflow-hidden border border-white/8 shadow-2xl"
+            style={{ transform: 'translateZ(0)' }}
+          >
             <Image
               src="/hero-fries.png"
               alt="Verse ambachtelijke friet van Friethuys 'Oer'! Nijmegen"
