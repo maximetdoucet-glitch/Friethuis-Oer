@@ -34,7 +34,7 @@ export default function Navbar() {
 
           {/* LEFT — Logo (no subtitle) */}
           <Link
-            href="/"
+            href="/#top"
             className="flex items-center gap-3 group shrink-0"
             aria-label="Friethuys Oer — Home"
           >

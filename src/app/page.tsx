@@ -8,30 +8,29 @@ import ScrollReveal from '@/components/ScrollReveal';
 
 export default function Home() {
   return (
-    <main className="min-h-screen relative">
-      {/* Fixed ambient page-glow — provides visual continuity across the whole page */}
-      <div className="page-glow" aria-hidden="true" />
+    <main className="min-h-screen relative" id="top">
+      {/* Ambient drifting background light */}
+      <div className="page-glow" />
 
       <Navbar />
-      <Hero />
+      
+      <section className="relative z-10 transition-colors duration-1000">
+        <Hero />
+      </section>
 
-      {/* FeaturedMenu — header reveals up, cards stagger in sequence */}
-      <ScrollReveal propagate threshold={0.06}>
+      <ScrollReveal variant="up" className="section-bleed" threshold={0.05}>
         <FeaturedMenu />
       </ScrollReveal>
 
-      {/* About — image slides from left, text from right (propagate triggers inner reveal-* children) */}
-      <ScrollReveal propagate threshold={0.06}>
+      <ScrollReveal variant="left" className="section-bleed" threshold={0.1}>
         <About />
       </ScrollReveal>
 
-      {/* Location — info cards stagger in, map scales up */}
-      <ScrollReveal propagate threshold={0.06}>
+      <ScrollReveal variant="right" className="section-bleed" threshold={0.1}>
         <Location />
       </ScrollReveal>
 
-      {/* Footer fades up gently */}
-      <ScrollReveal variant="up" delay={1} threshold={0.04}>
+      <ScrollReveal variant="fade" threshold={0.2}>
         <Footer />
       </ScrollReveal>
     </main>
