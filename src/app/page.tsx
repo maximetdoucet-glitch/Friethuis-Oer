@@ -26,7 +26,7 @@ export default function Home() {
         <About />
       </ScrollReveal>
 
-      <ScrollReveal variant="right" className="section-bleed" threshold={0.1}>
+      <ScrollReveal variant="right" threshold={0.1}>
         <Location />
       </ScrollReveal>
 

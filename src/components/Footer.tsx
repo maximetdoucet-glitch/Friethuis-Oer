@@ -32,7 +32,7 @@ export default function Footer() {
       <div className="absolute bottom-0 right-0 w-[500px] h-[400px] bg-accent/4 blur-[130px] rounded-full translate-x-1/3 translate-y-1/3 pointer-events-none" />
 
       {/* Main footer content */}
-      <div className="container mx-auto px-6 py-20">
+      <div className="container mx-auto px-6 pt-10 pb-20">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
 
           {/* Brand block */}
