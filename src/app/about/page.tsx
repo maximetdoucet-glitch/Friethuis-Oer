@@ -193,7 +193,7 @@ export default function AboutPage() {
               </span>
               <h2 className="text-[clamp(3rem,6vw,5rem)] leading-[0.84] tracking-tight mb-10">
                 VAN <span className="text-stroke">KLEIGROND</span><br />
-                TOT <span className="text-accent italic" style={{ fontFamily: 'var(--font-playfair)' }}>Jouw Bord</span>
+                TOT <span className="text-accent italic font-display">Jouw Bord</span>
               </h2>
 
               <div className="space-y-8">
@@ -270,7 +270,7 @@ export default function AboutPage() {
           <span className="inline-block text-accent font-black text-[10px] uppercase tracking-[0.4em] mb-12 border border-accent/30 rounded-full px-5 py-2">
             Onze Belofte
           </span>
-          <h3 className="text-[clamp(3rem,6vw,5.5rem)] leading-[0.88] mb-12 font-display italic" style={{ fontFamily: 'var(--font-playfair)' }}>
+          <h3 className="text-[clamp(3rem,6vw,5.5rem)] leading-[0.88] mb-12 font-display italic">
             &ldquo;In Friet We Trust&rdquo;
           </h3>
           <p className="text-2xl text-white/45 font-bold uppercase tracking-widest leading-loose">

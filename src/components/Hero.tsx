@@ -90,10 +90,7 @@ export default function Hero() {
         {/* Right column — image container now 100% raw and static */}
         <div className="relative order-1 lg:order-2">
           {/* Main image container — hardware accelerated */}
-          <div 
-            className="relative h-[55vh] lg:h-[75vh] w-full rounded-[2.5rem] overflow-hidden border border-white/8 shadow-2xl"
-            style={{ transform: 'translateZ(0)' }}
-          >
+          <div className="relative h-[55vh] lg:h-[75vh] w-full rounded-[2.5rem] overflow-hidden border border-white/8 shadow-2xl [transform:translateZ(0)]">
             <Image
               src="/hero-fries.png"
               alt="Verse ambachtelijke friet van Friethuys 'Oer'! Nijmegen"

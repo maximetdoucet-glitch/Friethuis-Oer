@@ -124,14 +124,10 @@ export default function Location() {
               src={MAPS_EMBED}
               width="100%"
               height="100%"
-              style={{
-                border: 0,
-                minHeight: '380px',
-              }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="absolute inset-0 w-full h-full"
+              className="absolute inset-0 w-full h-full border-0 min-h-[380px]"
             />
             {/* Overlay label */}
             <div className="absolute top-5 left-5 bg-black/95 border border-white/15 rounded-xl px-4 py-2.5 pointer-events-none z-10 backdrop-blur-md">

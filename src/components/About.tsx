@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { useRef } from 'react';
 
 const milestones = [
@@ -27,10 +26,7 @@ export default function About() {
           <div className="relative">
 
             {/* Main image container — hardware accelerated */}
-            <div 
-              className="relative rounded-[2.5rem] overflow-hidden border border-white/8 aspect-[4/5] shadow-2xl"
-              style={{ transform: 'translateZ(0)' }}
-            >
+            <div className="relative rounded-[2.5rem] overflow-hidden border border-white/8 aspect-[4/5] shadow-2xl [transform:translateZ(0)]">
               <Image
                 src="/exterior.png"
                 alt="Friethuys 'Oer'! – Het Nijmeegse Friethuys aan de Ziekerstraat"

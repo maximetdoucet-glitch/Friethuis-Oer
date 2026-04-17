@@ -4,7 +4,6 @@ import FeaturedMenu from '@/components/FeaturedMenu';
 import About from '@/components/About';
 import Location from '@/components/Location';
 import Footer from '@/components/Footer';
-import ScrollReveal from '@/components/ScrollReveal';
 
 export default function Home() {
   return (

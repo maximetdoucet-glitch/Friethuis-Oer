@@ -172,7 +172,7 @@ export default function ReviewsPage() {
               </div>
               <div>
                 <StarRating rating={5} />
-                <p className="text-black text-2xl md:text-3xl font-bold leading-relaxed mt-4 mb-6 italic font-display" style={{ fontFamily: 'var(--font-playfair)' }}>
+                <p className="text-black text-2xl md:text-3xl font-bold leading-relaxed mt-4 mb-6 italic font-display">
                   &ldquo;Absoluut de beste friet van Nijmegen. Het vegan stoofvlees is een openbaring! De kwaliteit is consistent elke keer — dat is zeldzaam en waardevol.&rdquo;
                 </p>
                 <div className="flex items-center gap-4">
