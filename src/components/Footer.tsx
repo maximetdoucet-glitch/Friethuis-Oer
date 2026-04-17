@@ -46,21 +46,19 @@ export default function Footer() {
 
           {/* Brand block */}
           <div className="md:col-span-5">
-            <Link href="/" className="inline-flex items-center gap-3 mb-8 group">
-              <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center rotate-3 group-hover:rotate-0 transition-transform duration-300 shrink-0 overflow-hidden shadow-xl shadow-accent/20">
+            <Link href="#top" className="flex items-center gap-3 mb-8 group">
+              <div className="relative w-12 h-12 flex items-center justify-center shrink-0">
                 <Image
                   src="/logo-mark.png"
                   alt="Friethuys Oer logo"
-                  width={34}
-                  height={34}
-                  className="object-contain brightness-0"
+                  width={48}
+                  height={48}
+                  className="object-contain"
                 />
               </div>
-              <div className="leading-none">
-                <span className="block text-[10px] font-black uppercase tracking-[0.3em] text-white/35 group-hover:text-accent/70 transition-colors">Ambachtelijk</span>
-                <span className="block text-2xl font-black tracking-tight">
-                  FRIETHUYS <span className="text-accent italic">&apos;OER&apos;!</span>
-                </span>
+              <div className="flex flex-col">
+                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40 leading-none mb-1">Ambachtelijk</span>
+                <span className="text-xl font-black text-white tracking-tight leading-none group-hover:text-accent transition-colors duration-300">FRIETHUYS <span className="text-accent">&apos;OER&apos;!</span></span>
               </div>
             </Link>
 
