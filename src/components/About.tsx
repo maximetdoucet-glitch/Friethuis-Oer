@@ -10,15 +10,15 @@ const milestones = [
 
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-black overflow-hidden relative">
+    <section id="about" className="py-20 bg-black overflow-hidden relative section-blend-top section-blend-bottom">
       {/* Ambient light */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/6 rounded-full blur-[140px] translate-x-1/3 -translate-y-1/3 pointer-events-none" />
 
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 
-          {/* Image column */}
-          <div className="relative group">
+          {/* Image column — slides in from the left */}
+          <div className="relative group reveal-left">
             {/* Glow blob */}
             <div className="absolute -inset-8 bg-accent/8 rounded-full blur-[80px] group-hover:bg-accent/14 transition-all duration-1000" />
 
@@ -49,8 +49,8 @@ export default function About() {
             </div>
           </div>
 
-          {/* Text column */}
-          <div className="relative">
+          {/* Text column — slides in from the right */}
+          <div className="relative reveal-right reveal-delay-1">
             <span className="inline-block text-accent font-black text-[10px] uppercase tracking-[0.4em] mb-6 border border-accent/30 rounded-full px-4 py-1.5">
               Ons Ambacht
             </span>

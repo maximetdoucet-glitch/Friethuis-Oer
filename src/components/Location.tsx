@@ -9,7 +9,7 @@ export default function Location() {
   ];
 
   return (
-    <section id="location" className="py-20 bg-[#060606] border-t border-white/5 relative overflow-hidden">
+    <section id="location" className="py-20 bg-[#060606] border-t border-white/5 relative overflow-hidden section-blend-top section-blend-bottom">
       {/* Ambient glow */}
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/6 blur-[120px] rounded-full -translate-x-1/2 translate-y-1/2 pointer-events-none" />
 
@@ -26,8 +26,8 @@ export default function Location() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-          {/* Info panel */}
-          <div className="lg:col-span-2 space-y-6">
+          {/* Info panel — cards stagger in */}
+          <div className="lg:col-span-2 space-y-6 stagger-children">
             {/* Address card */}
             <div className="glass rounded-[2rem] p-8 border-white/8 hover:border-accent/20 transition-all duration-300">
               <div className="flex items-start gap-4 mb-6">

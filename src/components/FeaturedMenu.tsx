@@ -30,7 +30,7 @@ const FEATURED = [
 
 export default function FeaturedMenu() {
   return (
-    <section id="menu" className="py-20 bg-[#060606] relative overflow-hidden">
+    <section id="menu" className="py-20 bg-[#060606] relative overflow-hidden section-blend-top section-blend-bottom">
       {/* Background decoration */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       <div className="absolute top-1/2 left-0 w-72 h-72 bg-accent/5 blur-[100px] rounded-full -translate-y-1/2" />
@@ -65,8 +65,8 @@ export default function FeaturedMenu() {
           </div>
         </div>
 
-        {/* Cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Cards grid — children stagger in sequence */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-children">
           {FEATURED.map((item, idx) => (
             <div
               key={idx}

@@ -2,21 +2,38 @@
 
 import { useEffect, useRef, ReactNode } from 'react';
 
+type RevealVariant = 'up' | 'left' | 'right' | 'scale';
+
 interface ScrollRevealProps {
   children: ReactNode;
-  /** Extra classes to add to the wrapper div */
   className?: string;
-  /** Delay variant: 1 | 2 | 3 (adds 0.1 / 0.2 / 0.3s extra delay) */
-  delay?: 1 | 2 | 3;
-  /** How much of the element must be visible before triggering (0–1) */
+  variant?: RevealVariant;
+  delay?: 1 | 2 | 3 | 4 | 5;
   threshold?: number;
+  /**
+   * When true the WRAPPER itself is invisible and only the
+   * reveal-* child elements get animated (good for sections
+   * with split left/right columns)
+   */
+  propagate?: boolean;
+  stagger?: boolean;
 }
+
+const VARIANT_CLASS: Record<RevealVariant, string> = {
+  up:    'reveal-up',
+  left:  'reveal-left',
+  right: 'reveal-right',
+  scale: 'reveal-scale',
+};
 
 export default function ScrollReveal({
   children,
   className = '',
+  variant = 'up',
   delay,
-  threshold = 0.12,
+  threshold = 0.10,
+  propagate = false,
+  stagger = false,
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -27,8 +44,19 @@ export default function ScrollReveal({
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          el.classList.add('is-visible');
-          observer.disconnect(); // fire once only
+          if (propagate) {
+            // Propagate is-visible to all nested reveal-* elements
+            const targets = el.querySelectorAll<HTMLElement>(
+              '.reveal-up, .reveal-left, .reveal-right, .reveal-scale, .stagger-children'
+            );
+            targets.forEach((t, i) => {
+              // Small per-element delay so nested items cascade
+              setTimeout(() => t.classList.add('is-visible'), i * 60);
+            });
+          } else {
+            el.classList.add('is-visible');
+          }
+          observer.disconnect();
         }
       },
       { threshold }
@@ -36,12 +64,24 @@ export default function ScrollReveal({
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [threshold]);
+  }, [threshold, propagate]);
 
-  const delayClass = delay ? `reveal-delay-${delay}` : '';
+  if (stagger) {
+    return (
+      <div
+        ref={ref}
+        className={`stagger-children ${delay ? `reveal-delay-${delay}` : ''} ${className}`}
+      >
+        {children}
+      </div>
+    );
+  }
+
+  const variantClass = propagate ? '' : VARIANT_CLASS[variant];
+  const delayClass   = delay ? `reveal-delay-${delay}` : '';
 
   return (
-    <div ref={ref} className={`reveal-section ${delayClass} ${className}`}>
+    <div ref={ref} className={`${variantClass} ${delayClass} ${className}`.trim()}>
       {children}
     </div>
   );
