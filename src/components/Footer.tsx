@@ -130,10 +130,6 @@ export default function Footer() {
           <p className="text-white/20 text-[10px] font-black uppercase tracking-widest">
             © 2026 Friethuys &apos;Oer&apos;! Nijmegen. Alle Rechten Voorbehouden.
           </p>
-          <div className="flex gap-6 text-white/20 text-[10px] font-black uppercase tracking-widest">
-            <a href="#" className="hover:text-white/40 transition-colors">Privacy</a>
-            <a href="#" className="hover:text-white/40 transition-colors">Voorwaarden</a>
-          </div>
         </div>
       </div>
     </footer>
