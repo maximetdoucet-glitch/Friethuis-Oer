@@ -17,15 +17,15 @@ export default function Location() {
       {/* Ambient glow */}
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/6 blur-[120px] rounded-full -translate-x-1/2 translate-y-1/2 pointer-events-none" />
 
-      <motion.div 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="container mx-auto px-6"
-      >
-        {/* Section header */}
-        <div className="text-center mb-16">
+      <div className="container mx-auto px-6">
+        {/* Section header — with reveal */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <span className="inline-block text-accent font-black text-[10px] uppercase tracking-[0.4em] mb-5 border border-accent/30 rounded-full px-4 py-1.5">
             Vind Ons
           </span>
@@ -33,11 +33,17 @@ export default function Location() {
             BEZOEK<br />
             <span className="text-accent">Friethuys &apos;Oer&apos;!</span>
           </h2>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-          {/* Info panel */}
-          <div className="lg:col-span-2 space-y-6">
+          {/* Info panel — with reveal */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-2 space-y-6"
+          >
             {/* Address card */}
             <div className="glass rounded-[2rem] p-8 border-white/8 hover:border-accent/20 transition-all duration-300">
               <div className="flex items-start gap-4 mb-6">
@@ -108,9 +114,9 @@ export default function Location() {
                 +31 24 203 6258
               </a>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Google Maps embed */}
+          {/* Google Maps embed — now 100% static */}
           <div className="lg:col-span-3 relative rounded-[2.5rem] overflow-hidden border border-white/8 min-h-[380px] shadow-2xl hover:border-accent/20 transition-all duration-300 group">
             <div className="absolute inset-0 bg-accent/5 group-hover:bg-accent/3 transition-colors duration-500" />
             <iframe
@@ -133,7 +139,7 @@ export default function Location() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

@@ -25,35 +25,38 @@ export default function Footer() {
       <div className="absolute top-0 left-0 w-[500px] h-[400px] bg-accent/4 blur-[130px] rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[400px] bg-accent/4 blur-[130px] rounded-full translate-x-1/3 translate-y-1/3 pointer-events-none" />
 
-      {/* Main footer content — hardware accelerated reveal */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="container mx-auto px-6 pt-10 pb-20"
-      >
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+      {/* Main footer content */}
+      <div className="container mx-auto px-6 pt-10 pb-20">
+        <div className="flex flex-col items-start mb-12">
+          {/* Brand block — now 100% static for zero-effect photos */}
+          <Link href="#top" className="flex items-center gap-3 group">
+            <div className="relative w-12 h-12 flex items-center justify-center">
+              <div className="absolute inset-0 bg-accent rounded-full scale-90 group-hover:scale-100 transition-transform duration-300" />
+              <Image
+                src="/logo-mark.png"
+                alt="Oer Logo"
+                width={32}
+                height={32}
+                className="relative z-10 brightness-0"
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40 leading-none mb-1">Ambachtelijk</span>
+              <span className="text-xl font-black text-white tracking-tight leading-none group-hover:text-accent transition-colors duration-300">FRIETHUYS <span className="text-accent">&apos;OER&apos;!</span></span>
+            </div>
+          </Link>
+        </div>
 
-          {/* Brand block */}
-          <div className="md:col-span-5 flex flex-col items-start">
-            <Link href="#top" className="flex items-center gap-3 mb-8 group">
-              <div className="relative w-12 h-12 flex items-center justify-center">
-                <div className="absolute inset-0 bg-accent rounded-full scale-90 group-hover:scale-100 transition-transform duration-300" />
-                <Image
-                  src="/logo-mark.png"
-                  alt="Oer Logo"
-                  width={32}
-                  height={32}
-                  className="relative z-10 brightness-0"
-                />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40 leading-none mb-1">Ambachtelijk</span>
-                <span className="text-xl font-black text-white tracking-tight leading-none group-hover:text-accent transition-colors duration-300">FRIETHUYS <span className="text-accent">&apos;OER&apos;!</span></span>
-              </div>
-            </Link>
-
+        {/* Reveal for the rest of the content */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16"
+        >
+          {/* Brand-info block */}
+          <div className="md:col-span-12 lg:col-span-5 flex flex-col items-start lg:mb-0 mb-10">
             <p className="text-white/40 text-sm font-medium leading-relaxed max-w-sm mb-10">
               Nijmegen&apos;s meest ambachtelijke friethuys. Verse friet uit Nederlandse kleigrond. &ldquo;In Friet We Trust&rdquo; — onze belofte aan jou.
             </p>
@@ -147,7 +150,7 @@ export default function Footer() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Bottom bar */}
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -155,7 +158,7 @@ export default function Footer() {
             © 2026 Friethuys &apos;Oer&apos;! Nijmegen. Alle Rechten Voorbehouden.
           </p>
         </div>
-      </motion.div>
+      </div>
     </footer>
   );
 }

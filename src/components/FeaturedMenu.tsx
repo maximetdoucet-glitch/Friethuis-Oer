@@ -116,7 +116,6 @@ export default function FeaturedMenu() {
                   className="object-cover"
                   sizes="(max-width: 768px) 90vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
 
                 {/* Badge */}
                 <span className="absolute top-5 left-5 glass-accent text-accent text-[9px] font-black uppercase tracking-[0.25em] px-3 py-1.5 rounded-full">

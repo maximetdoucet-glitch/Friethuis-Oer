@@ -87,14 +87,8 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Right column — image container now static and stabilized */}
-        <div className="relative order-1 lg:order-2 group">
-          {/* Decorative ring — now static */}
-          <div className="absolute inset-[-24px] rounded-[3rem] border border-accent/10" />
-
-          {/* Glow — now stable */}
-          <div className="absolute inset-0 bg-accent/10 blur-3xl rounded-3xl opacity-60" />
-
+        {/* Right column — image container now 100% raw and static */}
+        <div className="relative order-1 lg:order-2">
           {/* Main image container — hardware accelerated */}
           <div 
             className="relative h-[55vh] lg:h-[75vh] w-full rounded-[2.5rem] overflow-hidden border border-white/8 shadow-2xl"
@@ -108,15 +102,9 @@ export default function Hero() {
               priority
               sizes="(max-width: 1024px) 90vw, 45vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
 
-            {/* Floating card */}
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="absolute bottom-6 left-6 right-6 bg-black/60 backdrop-blur-xl rounded-2xl p-5 border border-white/10"
-            >
+            {/* Floating card — now 100% static */}
+            <div className="absolute bottom-6 left-6 right-6 bg-black/60 backdrop-blur-xl rounded-2xl p-5 border border-white/10">
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <span className="block text-accent font-black text-[10px] uppercase tracking-[0.3em] mb-1">Vers Geplukt</span>
@@ -124,19 +112,14 @@ export default function Hero() {
                   <p className="text-white/50 text-sm font-medium">Elke ochtend vers geleverd</p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
 
-          {/* Floating badge — now static and stable */}
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
-            className="absolute -bottom-8 -right-6 z-10 glass-accent rounded-2xl px-5 py-3.5 shadow-xl border-accent/25"
-          >
+          {/* Floating badge — now 100% static */}
+          <div className="absolute -bottom-8 -right-6 z-10 glass-accent rounded-2xl px-5 py-3.5 shadow-xl border-accent/25">
             <p className="text-[10px] font-black uppercase tracking-[0.2em] text-accent/80 mb-0.5">Dubbel Gebakken</p>
             <p className="text-white font-black text-lg">Perfecte Crunch</p>
-          </motion.div>
+          </div>
         </div>
       </div>
 

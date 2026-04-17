@@ -23,10 +23,8 @@ export default function About() {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 
-          {/* Image column */}
-          <div className="relative group">
-            {/* Glow blob */}
-            <div className="absolute -inset-8 bg-accent/8 rounded-full blur-[80px] group-hover:bg-accent/14 transition-all duration-1000" />
+          {/* Image column — now 100% clean and static */}
+          <div className="relative">
 
             {/* Main image container — hardware accelerated */}
             <div 
@@ -40,7 +38,6 @@ export default function About() {
                 className="object-cover"
                 sizes="(max-width: 1024px) 90vw, 45vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
               {/* Bottom overlay card */}
               <div className="absolute bottom-6 left-6 right-6 bg-black/60 backdrop-blur-xl rounded-2xl p-5 border border-white/10">
