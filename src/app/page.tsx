@@ -18,11 +18,11 @@ export default function Home() {
         <Hero />
       </section>
 
-      <ScrollReveal variant="up" className="section-bleed" threshold={0.05}>
+      <ScrollReveal variant="up" threshold={0.05}>
         <FeaturedMenu />
       </ScrollReveal>
 
-      <ScrollReveal variant="left" className="section-bleed" threshold={0.1}>
+      <ScrollReveal variant="left" threshold={0.1}>
         <About />
       </ScrollReveal>
 

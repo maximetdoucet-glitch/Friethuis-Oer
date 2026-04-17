@@ -19,20 +19,20 @@ interface ScrollRevealProps {
 
 const variants = {
   up: {
-    hidden: { opacity: 0, y: 15 },
-    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
   },
   left: {
-    hidden: { opacity: 0, x: -15 },
-    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
   },
   right: {
-    hidden: { opacity: 0, x: 15 },
-    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
   },
   scale: {
-    hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
   },
   fade: {
     hidden: { opacity: 0 },
