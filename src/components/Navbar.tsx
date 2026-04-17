@@ -27,7 +27,7 @@ export default function Navbar() {
           scrolled
             ? 'w-[96%] max-w-7xl bg-black/85 border-white/15 shadow-2xl shadow-black/50'
             : 'w-[94%] max-w-7xl bg-black/30 border-white/8'
-        } backdrop-blur-2xl border rounded-2xl px-8 py-3.5`}
+        } backdrop-blur-2xl border rounded-2xl px-4 md:px-8 py-3 md:py-3.5`}
       >
         {/* Three-column layout: logo | nav center | CTA */}
         <div className="flex items-center justify-between">
@@ -47,7 +47,7 @@ export default function Navbar() {
                 className="object-contain"
               />
             </div>
-            <span className="block text-xl font-black tracking-tight">
+            <span className="block text-[15px] sm:text-[17px] md:text-xl font-black tracking-tight shrink min-w-0 truncate">
               FRIETHUYS <span className="text-accent">&apos;OER&apos;!</span>
             </span>
           </Link>

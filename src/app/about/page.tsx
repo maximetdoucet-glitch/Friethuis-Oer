@@ -77,7 +77,7 @@ export default function AboutPage() {
           </div>
 
           {/* Hero image banner */}
-          <div className="relative aspect-[21/8] rounded-[2.5rem] overflow-hidden border border-white/8 mb-32">
+          <div className="relative aspect-[4/5] md:aspect-[21/8] rounded-[2.5rem] overflow-hidden border border-white/8 mb-20 md:mb-32">
             <Image
               src="/exterior.png"
               alt="Friethuys 'Oer'! – Ziekerstraat Nijmegen"
@@ -86,19 +86,19 @@ export default function AboutPage() {
               priority
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent md:from-black/60 md:via-transparent" />
 
             {/* Floating stats */}
-            <div className="absolute bottom-8 left-8 right-8 flex flex-wrap gap-4 justify-center">
+            <div className="absolute bottom-6 md:bottom-8 left-4 md:left-8 right-4 md:right-8 flex flex-row flex-wrap gap-2 md:gap-4 justify-center">
               {[
                 ['10+', 'Jaar Ervaring'],
                 ['50K+', 'Blije Klanten'],
                 ['4.8★', 'Google Rating'],
                 ['9', 'Huisgemaakte Sauzen'],
               ].map(([num, label]) => (
-                <div key={label} className="glass rounded-2xl px-6 py-4 text-center min-w-[120px]">
-                  <p className="text-accent font-black text-2xl leading-none mb-1">{num}</p>
-                  <p className="text-white/50 font-medium text-xs uppercase tracking-widest">{label}</p>
+                <div key={label} className="glass rounded-xl md:rounded-2xl px-4 py-3 md:px-6 md:py-4 text-center flex-1 min-w-[calc(50%-0.5rem)] md:min-w-[120px]">
+                  <p className="text-accent font-black text-xl md:text-2xl leading-none mb-1">{num}</p>
+                  <p className="text-white/60 font-medium text-[9px] md:text-xs uppercase tracking-widest">{label}</p>
                 </div>
               ))}
             </div>
