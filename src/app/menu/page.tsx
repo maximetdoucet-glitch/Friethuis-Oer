@@ -207,7 +207,7 @@ export default function MenuPage() {
                 {category.items.map((item, itemIdx) => (
                   <div
                     key={itemIdx}
-                    className={`group relative p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] border transition-all duration-300 hover-lift ${
+                    className={`group relative p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] border transition-all duration-300 hover-lift min-h-[160px] sm:min-h-0 flex flex-col ${
                       item.highlight
                         ? 'bg-accent/6 border-accent/25 hover:border-accent/50'
                         : 'bg-white/3 border-white/6 hover:border-white/15 hover:bg-white/5'
@@ -219,7 +219,7 @@ export default function MenuPage() {
                       </span>
                     )}
 
-                    <div className="flex items-start justify-between gap-3 mb-3">
+                    <div className="flex items-start justify-between gap-3 mb-3 shrink-0">
                       <h3 className={`text-lg font-black leading-tight transition-colors duration-200 ${
                         item.highlight ? 'text-accent' : 'group-hover:text-accent'
                       }`}>
@@ -230,7 +230,7 @@ export default function MenuPage() {
                       )}
                     </div>
 
-                    <p className="text-white/45 font-medium text-sm leading-relaxed mb-4">{item.desc}</p>
+                    <p className="text-white/45 font-medium text-sm leading-relaxed mb-4 flex-grow">{item.desc}</p>
 
                     {item.tags.length > 0 && (
                       <div className="flex gap-1.5 flex-wrap">

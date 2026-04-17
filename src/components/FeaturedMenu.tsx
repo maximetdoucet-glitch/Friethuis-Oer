@@ -71,7 +71,7 @@ export default function FeaturedMenu() {
             <span className="inline-block text-accent font-black text-[10px] uppercase tracking-[0.4em] mb-5 border border-accent/30 rounded-full px-4 py-1.5">
               De Smaakmakers
             </span>
-            <h2 className="text-[clamp(3rem,7vw,6rem)] leading-[0.82] tracking-tight">
+            <h2 className="text-[clamp(2rem,9vw,6rem)] leading-[0.82] tracking-tight">
               EEN SMAAK VAN<br />
               <span className="text-stroke italic">VAKMANSCHAP</span>
             </h2>
