@@ -16,7 +16,7 @@ export default function About() {
   const containerRef = useRef(null);
 
   return (
-    <section id="about" ref={containerRef} className="py-20 bg-black relative">
+    <section id="about" ref={containerRef} className="py-20 bg-black relative overflow-hidden">
       {/* Ambient light */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/6 rounded-full blur-[140px] translate-x-1/3 -translate-y-1/3 pointer-events-none" />
 
@@ -62,9 +62,9 @@ export default function About() {
               Ons Ambacht
             </span>
 
-            <h2 className="text-[clamp(3rem,6vw,5.5rem)] leading-[0.84] tracking-tight mb-8">
-              HET <span className="text-stroke">ERFGOED</span> VAN<br />
-              <span className="text-accent">Vakmanschap</span>
+            <h2 className="text-[clamp(3rem,6vw,5rem)] leading-[0.84] tracking-tight mb-8">
+              HET <span className="text-stroke">ORIGINELE</span><br />
+              <span className="text-accent">Verhaal</span>
             </h2>
 
             <div className="space-y-5 text-lg text-white/55 font-medium leading-relaxed mb-10">

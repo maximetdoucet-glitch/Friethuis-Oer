@@ -45,7 +45,7 @@ export default function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-[clamp(4rem,10vw,8rem)] leading-[0.84] tracking-tight mb-8">
+          <h1 className="text-[clamp(4rem,8vw,8rem)] leading-[0.84] tracking-tight mb-8">
             IN FRIET<br />
             <span className="gradient-text font-display">We Trust</span>
           </h1>

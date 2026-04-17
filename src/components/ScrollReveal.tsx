@@ -19,24 +19,24 @@ interface ScrollRevealProps {
 
 const variants = {
   up: {
-    hidden: { opacity: 0, y: 20, filter: 'blur(10px)' },
-    visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
+    hidden: { opacity: 0, y: 15 },
+    visible: { opacity: 1, y: 0 },
   },
   left: {
-    hidden: { opacity: 0, x: -20, filter: 'blur(10px)' },
-    visible: { opacity: 1, x: 0, filter: 'blur(0px)' },
+    hidden: { opacity: 0, x: -15 },
+    visible: { opacity: 1, x: 0 },
   },
   right: {
-    hidden: { opacity: 0, x: 20, filter: 'blur(10px)' },
-    visible: { opacity: 1, x: 0, filter: 'blur(0px)' },
+    hidden: { opacity: 0, x: 15 },
+    visible: { opacity: 1, x: 0 },
   },
   scale: {
-    hidden: { opacity: 0, scale: 0.95, filter: 'blur(10px)', y: 10 },
-    visible: { opacity: 1, scale: 1, filter: 'blur(0px)', y: 0 },
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0 },
   },
   fade: {
-    hidden: { opacity: 0, filter: 'blur(10px)' },
-    visible: { opacity: 1, filter: 'blur(0px)' },
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
   },
 } as const;
 
@@ -45,7 +45,7 @@ export default function ScrollReveal({
   className = '',
   delay = 0,
   variant = 'up',
-  threshold = 0.15,
+  threshold = 0.1,
   once = true,
 }: ScrollRevealProps) {
   return (
@@ -54,12 +54,9 @@ export default function ScrollReveal({
       whileInView="visible"
       viewport={{ once, amount: threshold }}
       transition={{
-        duration: 0.6,
+        duration: 0.5,
         delay,
-        ease: [0.215, 0.61, 0.355, 1], // Custom cubic-bezier for snappy visible feel
-        type: 'spring',
-        damping: 25,
-        stiffness: 120,
+        ease: "easeOut"
       }}
       variants={variants[variant]}
       className={className}
