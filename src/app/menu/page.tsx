@@ -207,7 +207,7 @@ export default function MenuPage() {
                 {category.items.map((item, itemIdx) => (
                   <div
                     key={itemIdx}
-                    className={`group relative p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] border transition-all duration-300 hover-lift min-h-[160px] sm:min-h-0 flex flex-col ${
+                    className={`group relative p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] border transition-all duration-300 hover-lift min-h-[196px] md:min-h-0 flex flex-col ${
                       item.highlight
                         ? 'bg-accent/6 border-accent/25 hover:border-accent/50'
                         : 'bg-white/3 border-white/6 hover:border-white/15 hover:bg-white/5'
