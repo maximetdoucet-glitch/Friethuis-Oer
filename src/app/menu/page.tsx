@@ -171,8 +171,8 @@ export default function MenuPage() {
             aria-labelledby={`heading-${category.id}`}
           >
             {/* Category header */}
-            <div className="flex flex-col lg:flex-row gap-12 mb-14 items-start">
-              <div className="lg:w-1/3 lg:sticky lg:top-32">
+            <div className="flex flex-col lg:flex-row gap-12 mb-14 items-start w-full">
+              <div className="w-full lg:w-1/3 lg:sticky lg:top-32">
                 <div className="flex items-center gap-3 mb-5">
                   <span className="w-12 h-12 bg-accent/15 rounded-2xl flex items-center justify-center text-2xl">{category.icon}</span>
                   <span className="text-accent font-black text-[10px] uppercase tracking-[0.3em]">{category.subtitle}</span>
@@ -189,7 +189,7 @@ export default function MenuPage() {
 
                 {/* Category image (if available) */}
                 {category.image && (
-                  <div className="mt-8 relative h-48 rounded-2xl overflow-hidden border border-white/8">
+                  <div className="mt-8 relative h-48 w-full rounded-2xl overflow-hidden border border-white/8">
                     <Image
                       src={category.image}
                       alt={category.title}
@@ -203,7 +203,7 @@ export default function MenuPage() {
               </div>
 
               {/* Items grid */}
-              <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-4">
                 {category.items.map((item, itemIdx) => (
                   <div
                     key={itemIdx}
