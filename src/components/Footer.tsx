@@ -27,9 +27,9 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-black border-t border-white/6 relative overflow-hidden">
-      {/* Top divider line */}
-      <div className="h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
+    <footer className="bg-black relative overflow-hidden pt-16">
+      {/* Yellow Top divider line — pushed down to sit right above the logo */}
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
 
       {/* Ambient glow */}
       <div className="absolute bottom-0 right-0 w-[500px] h-[400px] bg-accent/4 blur-[130px] rounded-full translate-x-1/3 translate-y-1/3 pointer-events-none" />
@@ -40,7 +40,7 @@ export default function Footer() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="container mx-auto px-6 py-20"
+        className="container mx-auto px-6 pt-12 pb-20"
       >
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
 
