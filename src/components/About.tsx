@@ -76,8 +76,8 @@ export default function About() {
             </span>
 
             <h2 className="text-[clamp(3rem,6vw,5.5rem)] leading-[0.84] tracking-tight mb-8">
-              HET <span className="text-stroke">ERFGOED</span><br />
-              VAN <span className="text-accent italic" style={{ fontFamily: 'var(--font-playfair)' }}>Vakmanschap</span>
+              HET <span className="text-stroke">ERFGOED</span> VAN<br />
+              <span className="text-accent italic" style={{ fontFamily: 'var(--font-playfair)' }}>Vakmanschap</span>
             </h2>
 
             <div className="space-y-5 text-lg text-white/55 font-medium leading-relaxed mb-10">

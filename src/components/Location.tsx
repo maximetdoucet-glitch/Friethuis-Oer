@@ -9,7 +9,7 @@ export default function Location() {
   ];
 
   return (
-    <section id="location" className="py-20 bg-[#060606] border-t border-white/5 relative overflow-hidden">
+    <section id="location" className="py-20 bg-[#060606] border-t border-white/5 relative overflow-hidden md:overflow-visible">
       {/* Ambient glow */}
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/6 blur-[120px] rounded-full -translate-x-1/2 translate-y-1/2 pointer-events-none" />
 
@@ -81,7 +81,7 @@ export default function Location() {
             </div>
 
             {/* Contact card */}
-            <div className="glass rounded-[2rem] p-8 border-white/8 hover:border-accent/20 transition-all duration-300">
+            <div className="glass rounded-[2rem] p-8 pb-10 border-white/8 hover:border-accent/20 transition-all duration-300">
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-12 h-12 bg-accent/15 rounded-2xl flex items-center justify-center shrink-0">
                   {/* Phone SVG */}
