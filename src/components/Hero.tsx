@@ -1,5 +1,9 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 const stats = [
   { number: '10+', label: 'Jaar Ervaring' },
@@ -9,24 +13,43 @@ const stats = [
 ];
 
 export default function Hero() {
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start start", "end start"]
+  });
+
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, 80]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [1, -5]);
+  const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-24 pb-12">
+    <section ref={targetRef} className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-24 pb-12">
       {/* Ambient glow blobs */}
       <div className="absolute top-1/4 left-0 w-[600px] h-[600px] bg-accent/8 rounded-full blur-[140px] -translate-x-1/2 pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[400px] bg-accent/5 rounded-full blur-[120px] translate-x-1/4 translate-y-1/4 pointer-events-none" />
 
       {/* Giant background word */}
-      <div className="absolute inset-0 flex items-center pointer-events-none select-none overflow-hidden">
+      <motion.div 
+        style={{ y: y1, opacity }}
+        className="absolute inset-0 flex items-center pointer-events-none select-none overflow-hidden"
+      >
         <h2 className="text-[22vw] font-black leading-none whitespace-nowrap opacity-[0.035] tracking-tighter translate-x-[-5%]">
           FRIET FRIET FRIET
         </h2>
-      </div>
+      </motion.div>
 
       <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center relative z-10">
         {/* Left column — copy */}
-        <div className="order-2 lg:order-1">
+        <motion.div 
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="order-2 lg:order-1"
+        >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2.5 glass rounded-full px-4 py-2 mb-8 border border-accent/20">
+          <div className="inline-flex items-center gap-2.5 bg-black/40 backdrop-blur-xl rounded-full px-4 py-2 mb-8 border border-accent/20">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse shrink-0" />
             <span className="text-[10px] font-black uppercase tracking-[0.3em] text-accent">
               #1 Friet van Nijmegen
@@ -76,10 +99,13 @@ export default function Hero() {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Right column — image */}
-        <div className="relative order-1 lg:order-2 group">
+        <motion.div 
+          style={{ y: y2, rotate }}
+          className="relative order-1 lg:order-2 group"
+        >
           {/* Rotating ring */}
           <div className="absolute inset-[-24px] rounded-[3rem] border border-accent/10 animate-spin-slow" style={{ animationDuration: '30s' }} />
 
@@ -87,7 +113,7 @@ export default function Hero() {
           <div className="absolute inset-0 bg-accent/10 blur-3xl rounded-3xl scale-90 group-hover:scale-100 transition-transform duration-1000 opacity-60" />
 
           {/* Main image */}
-          <div className="relative h-[55vh] lg:h-[75vh] w-full rounded-[2.5rem] overflow-hidden border border-white/8 transform rotate-1 group-hover:rotate-0 transition-transform duration-700 shadow-2xl">
+          <div className="relative h-[55vh] lg:h-[75vh] w-full rounded-[2.5rem] overflow-hidden border border-white/8 shadow-2xl">
             <Image
               src="/hero-fries.png"
               alt="Verse ambachtelijke friet van Friethuys 'Oer'! Nijmegen"
@@ -99,7 +125,12 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
 
             {/* Floating card */}
-            <div className="absolute bottom-6 left-6 right-6 glass rounded-2xl p-5 border-white/10">
+            <motion.div 
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="absolute bottom-6 left-6 right-6 bg-black/60 backdrop-blur-xl rounded-2xl p-5 border border-white/10"
+            >
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <span className="block text-accent font-black text-[10px] uppercase tracking-[0.3em] mb-1">Vers Geplukt</span>
@@ -107,24 +138,33 @@ export default function Hero() {
                   <p className="text-white/50 text-sm font-medium">Elke ochtend vers geleverd</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Floating badge */}
-          <div className="absolute -bottom-8 -right-6 z-10 glass-accent rounded-2xl px-5 py-3.5 shadow-xl border-accent/25 animate-float" style={{ animationDelay: '0.5s' }}>
+          <motion.div 
+            initial={{ scale: 0, rotate: 10 }}
+            animate={{ scale: 1, rotate: 0 }}
+            transition={{ delay: 0.6, type: "spring" }}
+            className="absolute -bottom-8 -right-6 z-10 glass-accent rounded-2xl px-5 py-3.5 shadow-xl border-accent/25 animate-float" style={{ animationDelay: '0.5s' }}
+          >
             <p className="text-[10px] font-black uppercase tracking-[0.2em] text-accent/80 mb-0.5">Dubbel Gebakken</p>
             <p className="text-white font-black text-lg">Perfecte Crunch</p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
       {/* Scroll hint */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40 animate-bounce">
+      <motion.div 
+        animate={{ y: [0, 10, 0] }}
+        transition={{ repeat: Infinity, duration: 2 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40"
+      >
         <span className="text-[9px] font-black uppercase tracking-[0.3em]">Scroll</span>
         <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
         </svg>
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -231,37 +231,45 @@ body {
 .reveal-section,
 .reveal-up {
   opacity: 0;
-  transform: translateY(55px);
+  filter: blur(8px);
+  transform: translateY(45px) skewY(1deg);
   transition:
-    opacity  0.85s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity  0.6s cubic-bezier(0.2, 1, 0.3, 1),
+    filter   0.6s cubic-bezier(0.2, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 /* ── From left ── */
 .reveal-left {
   opacity: 0;
-  transform: translateX(-55px);
+  filter: blur(8px);
+  transform: translateX(-45px) skewX(1deg);
   transition:
-    opacity  0.85s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity  0.6s cubic-bezier(0.2, 1, 0.3, 1),
+    filter   0.6s cubic-bezier(0.2, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 /* ── From right ── */
 .reveal-right {
   opacity: 0;
-  transform: translateX(55px);
+  filter: blur(8px);
+  transform: translateX(45px) skewX(-1deg);
   transition:
-    opacity  0.85s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity  0.6s cubic-bezier(0.2, 1, 0.3, 1),
+    filter   0.6s cubic-bezier(0.2, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 /* ── Scale in ── */
 .reveal-scale {
   opacity: 0;
-  transform: scale(0.9);
+  filter: blur(8px);
+  transform: scale(0.94) translateY(20px);
   transition:
-    opacity  0.85s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity  0.6s cubic-bezier(0.2, 1, 0.3, 1),
+    filter   0.6s cubic-bezier(0.2, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 /* ── Visible state (all variants) ── */
@@ -271,15 +279,22 @@ body {
 .reveal-right.is-visible,
 .reveal-scale.is-visible {
   opacity: 1;
+  filter: blur(0);
   transform: none;
 }
 
-/* Stagger delay variants */
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-.reveal-delay-5 { transition-delay: 0.5s; }
+/* Stagger delay variants — snappy steps */
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+.reveal-delay-5 { transition-delay: 0.40s; }
+
+/* ========= PARALLAX UTILITIES ========= */
+.parallax-layer {
+  transition: transform 0.1s linear;
+  will-change: transform;
+}
 
 /* ========= SECTION BLEED UTILITY ========= */
 .section-bleed {

@@ -118,7 +118,7 @@ export default function Location() {
               className="absolute inset-0 w-full h-full"
             />
             {/* Overlay label */}
-            <div className="absolute top-5 left-5 glass rounded-xl px-4 py-2.5 pointer-events-none z-10">
+            <div className="absolute top-5 left-5 bg-black/95 border border-white/15 rounded-xl px-4 py-2.5 pointer-events-none z-10 backdrop-blur-md">
               <span className="text-[10px] font-black uppercase tracking-[0.3em] text-accent">Live Kaart</span>
             </div>
           </div>

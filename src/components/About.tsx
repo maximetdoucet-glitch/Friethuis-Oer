@@ -1,5 +1,9 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 const milestones = [
   { year: '2014', label: 'Opgericht op Ziekerstraat' },
@@ -9,8 +13,17 @@ const milestones = [
 ];
 
 export default function About() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const imgY = useTransform(scrollYProgress, [0, 1], [0, 120]);
+  const textY = useTransform(scrollYProgress, [0, 1], [0, -40]);
+
   return (
-    <section id="about" className="py-20 bg-black overflow-hidden relative">
+    <section id="about" ref={containerRef} className="py-20 bg-black overflow-hidden relative">
       {/* Ambient light */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/6 rounded-full blur-[140px] translate-x-1/3 -translate-y-1/3 pointer-events-none" />
 
@@ -18,12 +31,12 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 
           {/* Image column */}
-          <div className="relative group">
+          <motion.div style={{ y: imgY }} className="relative group">
             {/* Glow blob */}
             <div className="absolute -inset-8 bg-accent/8 rounded-full blur-[80px] group-hover:bg-accent/14 transition-all duration-1000" />
 
             {/* Main image */}
-            <div className="relative rounded-[2.5rem] overflow-hidden border border-white/8 aspect-[4/5]">
+            <div className="relative rounded-[2.5rem] overflow-hidden border border-white/8 aspect-[4/5] shadow-2xl">
               <Image
                 src="/exterior.png"
                 alt="Friethuys 'Oer'! – Het Nijmeegse Friethuys aan de Ziekerstraat"
@@ -34,7 +47,7 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
               {/* Bottom overlay card */}
-              <div className="absolute bottom-6 left-6 right-6 glass rounded-2xl p-5">
+              <div className="absolute bottom-6 left-6 right-6 bg-black/60 backdrop-blur-xl rounded-2xl p-5 border border-white/10">
                 <p className="text-accent font-black text-[10px] uppercase tracking-[0.3em] mb-1">Locatie</p>
                 <p className="text-white font-black text-lg">Ziekerstraat 1</p>
                 <p className="text-white/50 text-sm font-medium">6511 LH Nijmegen</p>
@@ -42,15 +55,19 @@ export default function About() {
             </div>
 
             {/* Floating badge */}
-            <div className="absolute -bottom-8 -right-5 w-28 h-28 bg-accent rounded-full flex items-center justify-center p-5 shadow-2xl shadow-accent/30 transform rotate-12 group-hover:rotate-0 transition-all duration-700 z-10">
+            <motion.div 
+              style={{ rotate: 12 }}
+              whileHover={{ rotate: 0, scale: 1.1 }}
+              className="absolute -bottom-8 -right-5 w-28 h-28 bg-accent rounded-full flex items-center justify-center p-5 shadow-2xl shadow-accent/30 z-10"
+            >
               <span className="text-black font-black text-center text-sm leading-tight uppercase">
                 EST.<br />2014
               </span>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Text column */}
-          <div className="relative">
+          <motion.div style={{ y: textY }} className="relative">
             <span className="inline-block text-accent font-black text-[10px] uppercase tracking-[0.4em] mb-6 border border-accent/30 rounded-full px-4 py-1.5">
               Ons Ambacht
             </span>
@@ -86,13 +103,13 @@ export default function About() {
               className="group inline-flex items-center gap-4 text-white font-black text-[11px] uppercase tracking-[0.3em]"
             >
               Meer Over Ons
-              <span className="w-12 h-12 glass rounded-full flex items-center justify-center group-hover:bg-accent group-hover:text-black group-hover:border-accent transition-all duration-300 border border-white/10">
+              <span className="w-12 h-12 bg-white/5 backdrop-blur-md rounded-full flex items-center justify-center group-hover:bg-accent group-hover:text-black group-hover:border-accent transition-all duration-300 border border-white/10">
                 <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </span>
             </Link>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,5 +1,8 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const FEATURED = [
   {
@@ -28,6 +31,31 @@ const FEATURED = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+} as const;
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30, scale: 0.95, filter: 'blur(8px)' },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    scale: 1, 
+    filter: 'blur(0px)',
+    transition: {
+      type: 'spring',
+      damping: 20,
+      stiffness: 100
+    }
+  },
+} as const;
+
 export default function FeaturedMenu() {
   return (
     <section id="menu" className="py-20 bg-[#060606] relative overflow-hidden">
@@ -38,7 +66,12 @@ export default function FeaturedMenu() {
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-20">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <span className="inline-block text-accent font-black text-[10px] uppercase tracking-[0.4em] mb-5 border border-accent/30 rounded-full px-4 py-1.5">
               De Smaakmakers
             </span>
@@ -46,8 +79,14 @@ export default function FeaturedMenu() {
               EEN SMAAK VAN<br />
               <span className="text-stroke italic">VAKMANSCHAP</span>
             </h2>
-          </div>
-          <div className="lg:max-w-xs shrink-0">
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:max-w-xs shrink-0"
+          >
             <p className="text-white/45 font-medium leading-relaxed mb-8">
               Elke bereiding is het resultaat van jaren perfecteren.
               Geen compromissen. Alleen het beste.
@@ -62,15 +101,23 @@ export default function FeaturedMenu() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
-          </div>
+          </motion.div>
         </div>
 
         {/* Cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+        >
           {FEATURED.map((item, idx) => (
-            <div
+            <motion.div
               key={idx}
-              className="group relative rounded-[2rem] overflow-hidden border border-white/6 hover:border-accent/25 transition-all duration-500 hover-lift bg-card"
+              variants={itemVariants}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
+              className="group relative rounded-[2rem] overflow-hidden border border-white/6 hover:border-accent/25 transition-all duration-500 bg-card"
             >
               {/* Image */}
               <div className="relative h-72 w-full overflow-hidden">
@@ -91,7 +138,7 @@ export default function FeaturedMenu() {
                 {/* Tags */}
                 <div className="absolute top-5 right-5 flex gap-1.5">
                   {item.tags.map(tag => (
-                    <span key={tag} className="w-7 h-7 glass rounded-lg flex items-center justify-center text-[9px] font-black text-white/70">
+                    <span key={tag} className="w-7 h-7 bg-black/40 backdrop-blur-md rounded-lg flex items-center justify-center text-[9px] font-black text-white/70">
                       {tag}
                     </span>
                   ))}
@@ -112,12 +159,18 @@ export default function FeaturedMenu() {
                   </svg>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Bottom CTA banner */}
-        <div className="mt-16 glass rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 border-white/6">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-16 bg-black/40 backdrop-blur-2xl rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 border border-white/6"
+        >
           <div>
             <span className="text-accent font-black text-[10px] uppercase tracking-[0.3em] block mb-2">Chef&apos;s Tip</span>
             <p className="text-xl font-black max-w-xl">
@@ -131,7 +184,7 @@ export default function FeaturedMenu() {
           >
             Bekijk Bestsellers
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
