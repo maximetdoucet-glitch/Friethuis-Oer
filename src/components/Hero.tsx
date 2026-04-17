@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { useRef } from 'react';
 
 const stats = [
@@ -24,6 +24,10 @@ export default function Hero() {
   const rotate = useTransform(scrollYProgress, [0, 1], [1, -5]);
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
+  // Smooth out the motion
+  const smoothY1 = useSpring(y1, { stiffness: 100, damping: 30, restDelta: 0.001 });
+  const smoothY2 = useSpring(y2, { stiffness: 100, damping: 30, restDelta: 0.001 });
+
   return (
     <section ref={targetRef} className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-24 pb-12">
       {/* Ambient glow blobs */}
@@ -32,7 +36,7 @@ export default function Hero() {
 
       {/* Giant background word */}
       <motion.div 
-        style={{ y: y1, opacity }}
+        style={{ y: smoothY1, opacity }}
         className="absolute inset-0 flex items-center pointer-events-none select-none overflow-hidden"
       >
         <h2 className="text-[22vw] font-black leading-none whitespace-nowrap opacity-[0.035] tracking-tighter translate-x-[-5%]">
@@ -103,7 +107,7 @@ export default function Hero() {
 
         {/* Right column — image */}
         <motion.div 
-          style={{ y: y2, rotate }}
+          style={{ y: smoothY2, rotate }}
           className="relative order-1 lg:order-2 group"
         >
           {/* Rotating ring */}
